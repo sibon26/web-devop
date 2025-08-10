@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+/* Fixed Header */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #0b3d91;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+}
+
+#header-img {
+  width: 50px;
+  height: auto;
+}
+
+#nav-bar {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+#hero {
+  margin-top: 80px; /* Space for fixed header */
+  text-align: center;
+  padding: 2rem;
+  background: #f7f9fc;
+}
+
+#form {
+  margin-top: 1rem;
+}
+
+#email {
+  padding: 0.5rem;
+  width: 250px;
+  max-width: 80%;
+  margin-right: 0.5rem;
+}
+
+#submit {
+  padding: 0.5rem 1rem;
+  background: #ff8c42;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background: #e6732c;
+}
+
+/* Features Section */
+#features {
+  padding: 2rem;
+  background: white;
+}
+
+.feature-grid {
+  display: flex; /* Flexbox */
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.feature {
+  flex: 1;
+  padding: 1rem;
+  background: #eef2f7;
+  border-radius: 8px;
+}
+
+/* Video Section */
+#video-section {
+  text-align: center;
+  padding: 2rem;
+  background: #f7f9fc;
+}
+
+#video {
+  max-width: 100%;
+}
+
+/* Pricing Section */
+#pricing {
+  padding: 2rem;
+  background: white;
+}
+
+.pricing-flex {
+  display: flex; /* Flexbox */
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.price-card {
+  flex: 1;
+  padding: 1rem;
+  background: #eef2f7;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0b3d91;
+}
+
+/* Footer */
+footer {
+  background: #0b3d91;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Media Query */
+@media (max-width: 768px) {
+  .feature-grid,
+  .pricing-flex {
+    flex-direction: column;
+  }
+
+  #nav-bar {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  #header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
