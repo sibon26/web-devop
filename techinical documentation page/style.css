@@ -1,0 +1,152 @@
+CSS
+/* Basic reset & layout */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --nav-width: 260px;
+  --nav-bg: #0b3d91;
+  --nav-text: #ffffff;
+  --content-bg: #f7f9fc;
+  --accent: #ff8c42;
+}
+
+/* Navbar on the left, fixed so it's always visible */
+#navbar {
+  position: fixed;
+  left: 0;               /* left edge of the window */
+  top: 0;
+  width: var(--nav-width);
+  height: 100vh;
+  background: linear-gradient(180deg, var(--nav-bg), #05326a);
+  color: var(--nav-text);
+  padding: 1.4rem 1rem;
+  overflow-y: auto;
+  border-right: 3px solid rgba(255,255,255,0.05);
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Header inside navbar must come before links (test requirement) */
+#navbar > header {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 0.2px;
+}
+
+/* Nav links */
+#navbar .nav-link {
+  display: block;
+  text-decoration: none;
+  color: var(--nav-text);
+  padding: 0.55rem 0.6rem;
+  margin: 0.15rem 0;
+  border-radius: 6px;
+  transition: background 0.15s, transform 0.08s;
+}
+#navbar .nav-link:hover,
+#navbar .nav-link:focus {
+  background: rgba(255,255,255,0.06);
+  transform: translateX(4px);
+  outline: none;
+}
+
+/* Main content area — keep it to the right of the fixed navbar */
+#main-doc {
+  margin-left: calc(var(--nav-width) + 1rem);
+  padding: 2rem;
+  background: var(--content-bg);
+  min-height: 100vh;
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  color: #222;
+}
+
+/* Section look */
+.main-section {
+  background: white;
+  border-radius: 10px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 6px 18px rgba(15,25,40,0.05);
+}
+.main-section > header {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+/* Typography & code styling */
+p { margin-bottom: 0.6rem; line-height: 1.5; }
+ul { margin: 0.6rem 0 0.6rem 1.1rem; }
+li { margin: 0.25rem 0; }
+
+code {
+  display: inline-block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
+  background: #f2f6fb;
+  padding: 0.25rem 0.45rem;
+  border-radius: 6px;
+  font-size: 0.95em;
+  margin: 0.25rem 0;
+}
+
+/* small visual accent for first section */
+#Introduction { border-left: 6px solid var(--accent); }
+
+/* Smooth scrolling when jumping from navbar links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---------------------------
+   MEDIA QUERY (RESPONSIVE)
+   ---------------------------
+   On small screens (mobile/tablet), move the navbar to the top
+   and make it horizontal. This is required by the project tests.
+*/
+@media (max-width: 768px) {
+  :root { --nav-width: 100%; }
+
+  #navbar {
+    position: fixed;
+    top: 0;
+    left: 0;              /* still the left edge (top bar starts at left) */
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem;
+    z-index: 999;
+    border-right: none;
+    border-bottom: 2px solid rgba(0,0,0,0.06);
+  }
+
+  #navbar > header {
+    flex: 1 1 100%;
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+
+  #navbar .nav-link {
+    flex: 1 1 auto;
+    padding: 0.45rem 0.6rem;
+    font-size: 0.9rem;
+    background: rgba(255,255,255,0.03);
+    border-radius: 8px;
+  }
+
+  /* Make main content fill the screen below the top navbar */
+  #main-doc {
+    margin-left: 0;
+    padding-top: 4.2rem; /* offset for fixed top nav */
+  }
+}
+
+/* smaller tweak for very narrow screens */
+@media (max-width: 420px) {
+  #main-doc { padding: 1rem; }
+  .main-section { padding: 1rem; }
+  #navbar .nav-link { font-size: 0.85rem; padding: 0.4rem; }
+}        
+
