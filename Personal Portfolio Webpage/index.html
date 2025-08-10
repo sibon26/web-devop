@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <nav id="navbar">
+      <a href="#welcome-section">Welcome</a>
+      <a href="#projects">Projects</a>
+    </nav>
+
+    <section id="welcome-section">
+      <h1>Hello, I'm a Web Developer</h1>
+    </section>
+
+    <section id="projects">
+      <div class="project-tile">
+        <a href="https://example.com" target="_blank">Sample Project</a>
+      </div>
+    </section>
+
+    <footer>
+      <a id="profile-link" href="https://github.com/yourusername" target="_blank">My GitHub</a>
+    </footer>
+
+    <style>
+      #welcome-section {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: lightblue;
+      }
+      #navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: #333;
+        padding: 1em;
+      }
+      #navbar a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+      }
+      @media (max-width: 600px) {
+        #welcome-section h1 {
+          font-size: 1.5em;
+        }
+      }
+    </style>
+  </body>
+</html>
